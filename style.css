@@ -70,46 +70,47 @@ body{
     
     --rotation:330deg;
 }
-.circleop{
+.clock::after{
+content: "";
 position: absolute;
-height: 20px ;
-width:20px;
+height: 15px ;
+width:15px;
 background-color: black;
 border-radius: 50%;
 top: 50%;
-left:50%
+transform: translate(-50%,-50%);
+left:50%;
+z-index: 11;
 
 }
-.seconds{
-    left: 52%;
-    top:54%;
+.hands{
+    background-color: black;
+    left: 50%;
+    bottom:50%;
     position: absolute;
-    height: 200px;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+    transform-origin: bottom;
+    z-index: 10;
+    border: 1px solid white;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    --rotation:0;
+    
+}
+.seconds{
+    height: 45%;
     width:3px;
     background-color: red;
-    transform: translateX(-50%);
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    
 }
 .minutes{
-    left: 52%;
-    top:54%;
-    position: absolute;
-    height: 150px;
-    width:6px;
+    height: 40%;
+    width:7px;
     background-color: black;
-    transform: translateX(-50%);
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    
 }
 .hours{
-    left: 52%;
-    top:54%;
-    position: absolute;
-    height: 100px;
+    height: 30%;
     width:10px;
     background-color: black;
-    transform: translateX(-50%);
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px ;
 }
